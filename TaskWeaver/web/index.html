@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskWeaver - Smart Task Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 TaskWeaver</h1>
+            <p class="subtitle">Context-Aware Task Management System</p>
+        </header>
+
+        <div class="streak-display">
+            <div class="streak-counter">
+                <span class="streak-number" id="streak-count">0</span>
+                <span class="streak-label">day streak! 🔥</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="focus-view">
+                <h2> Your Focus Task</h2>
+                <div id="focus-task" class="focus-task">
+                    <p class="no-task">No tasks available. Add your first task!</p>
+                </div>
+            </div>
+
+            <div class="task-creation">
+                <h2>➕ Create New Task</h2>
+                <form id="task-form" class="task-form">
+                    <input type="text" id="task-title" placeholder="Task title" required>
+                    <select id="task-priority" required>
+                        <option value="">Select Priority</option>
+                        <option value="1">🔥 Highest (1)</option>
+                        <option value="2">⭐ High (2)</option>
+                        <option value="3">📝 Medium (3)</option>
+                        <option value="4">📋 Low (4)</option>
+                        <option value="5">💤 Lowest (5)</option>
+                    </select>
+                    <input type="date" id="task-due-date" required>
+                    <button type="submit">Add Task</button>
+                </form>
+            </div>
+
+            <div class="tasks-view">
+                <h2>📋 All Tasks</h2>
+                <div class="view-controls">
+                    <button class="view-btn active" data-view="all">All Tasks</button>
+                    <button class="view-btn" data-view="incomplete">Incomplete</button>
+                    <button class="view-btn" data-view="urgent">🚨 Urgent</button>
+                    <button class="view-btn" data-view="completed">✅ Completed</button>
+                </div>
+                <div id="tasks-list" class="tasks-list">
+                    <!-- Tasks will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
